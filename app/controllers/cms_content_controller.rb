@@ -4,6 +4,7 @@ class CmsContentController < ApplicationController
   before_filter :load_fixtures
   before_filter :load_cms_page,   :only => :render_html
   before_filter :load_cms_layout, :only => [:render_css, :render_js]
+  before_filter :authpages, :only => :render_html
   
   def render_html(status = 200)
     if layout = @cms_page.layout

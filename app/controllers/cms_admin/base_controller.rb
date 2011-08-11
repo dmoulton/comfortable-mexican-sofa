@@ -9,6 +9,8 @@ class CmsAdmin::BaseController < ApplicationController
                 :load_admin_site,
                 :load_fixtures,
                 :except => :jump
+
+  skip_before_filter :authpages
   
   layout 'cms_admin'
   
